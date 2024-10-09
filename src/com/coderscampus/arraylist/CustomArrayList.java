@@ -7,12 +7,13 @@ import java.util.Arrays;
 //make sure that it is still the same array 
 //a. check and see if there is an index that we can add to 
 //b.find where the first empty space would be
-//c.
+//c. we now need to determine if the current array is full
+// d. then have it double in size somehow probably with newItems
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
 		int n=items.length;
-Object[] newItems= new Object[n+1];
+Object[] newItems= new Object[2*n];
 
 
 
@@ -22,10 +23,17 @@ Object[] newItems= new Object[n+1];
 		System.out.println(item);
 			
 		
+	for(Object place:items) {
+		if(place!=null) {
+			items=newItems;
+			
+		}
+	}
+	
 		
 			System.out.println(Arrays.toString(items));
 			for(int i=0;i<items.length; i++)
-			if(items[i]==null) {
+			if(newItems[i]==null) {
 		items[i]=item;
 		newItems[i]=items[i];
 		
@@ -37,6 +45,9 @@ Object[] newItems= new Object[n+1];
 			System.out.println(Arrays.toString(newItems));
 	
 	return false;
+	
+	
+	
 	}
 
 	
