@@ -12,8 +12,10 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
-		int n=items.length;
-Object[] newItems= new Object[2*n];
+	
+			int n=1;
+		Object[] newItems= new Object[items.length*n];
+
 
 
 
@@ -21,13 +23,30 @@ Object[] newItems= new Object[2*n];
 	public boolean add(T item) {
 	
 		System.out.println(item);
-			
 		
-	for(Object place:items) {
-		if(place!=null) {
-			items=newItems;
-			
-		}
+		
+		for(int i=0; i<items.length; i++) {
+			if (items==null) {
+				items=newItems;
+				
+			}
+			else {
+				
+				n++;
+			}
+		
+		System.out.println(n);
+//		for(int z=0; z<items.length;z++) {
+//		
+//		if(z==items.length-2) {
+//			
+//			items=newItems;
+//	    n++;
+//			
+//		}
+		
+	
+
 	}
 	
 		
@@ -36,13 +55,14 @@ Object[] newItems= new Object[2*n];
 			if(newItems[i]==null) {
 		items[i]=item;
 		newItems[i]=items[i];
+
 		
 	System.out.println(Arrays.toString(newItems));
-	//System.arraycopy(newItems, i, items[i], i, n);
 	return true;
 			}
 			
 			System.out.println(Arrays.toString(newItems));
+			
 	
 	return false;
 	
