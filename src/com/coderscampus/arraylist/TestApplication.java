@@ -8,6 +8,17 @@ public class TestApplication {
 		
 		customArrayList.add( "Hello");
 		customArrayList.add("World");
+		customArrayList.add("From");
+		customArrayList.add("The");
+		customArrayList.add("Other");
+		customArrayList.add("Side");
+		customArrayList.add("I");
+		customArrayList.add("Think");
+		customArrayList.add("You're");
+		customArrayList.add("Calling");
+		//customArrayList.add("From");
+		//customArrayList.add("A");
+
 	}
 
 }
