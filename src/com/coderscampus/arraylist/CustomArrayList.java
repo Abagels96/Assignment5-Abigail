@@ -13,9 +13,8 @@ import java.util.Arrays;
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
 	
-			int n=1;
-		Object[] newItems= new Object[items.length*n];
-
+	
+	public int counter=1;
 
 
 
@@ -23,33 +22,14 @@ public class CustomArrayList<T> implements CustomList<T> {
 	public boolean add(T item) {
 	
 		System.out.println(item);
-		
-		
-		for(int i=0; i<items.length; i++) {
-			if (items==null) {
-				items=newItems;
-				
-			}
-			else {
-				
-				n++;
-			}
-		
-		System.out.println(n);
-//		for(int z=0; z<items.length;z++) {
-//		
-//		if(z==items.length-2) {
-//			
-//			items=newItems;
-//	    n++;
-//			
-//		}
-		
+if(
+arrayIsFull()==true){
 	
-
-	}
+	counter++;
 	
-		
+}
+			
+		Object[] newItems= new Object[items.length*counter];
 			System.out.println(Arrays.toString(items));
 			for(int i=0;i<items.length; i++)
 			if(newItems[i]==null) {
@@ -70,6 +50,25 @@ public class CustomArrayList<T> implements CustomList<T> {
 	
 	}
 
+
+
+
+
+
+
+	public boolean arrayIsFull() {
+		for(Object element:items) {
+				if(element==null) {
+					System.out.println("the array is empty");
+				}
+				else {
+					System.out.println("The array is full");
+		           
+		          
+				}
+		}  return true;
+	}
+
 	
 		
 			
@@ -77,7 +76,11 @@ public class CustomArrayList<T> implements CustomList<T> {
 			
 
 	@Override
-	public int getSize() {
+	public int getSize(
+			
+			) {
+		
+		
 	
 		return 0;
 	}
