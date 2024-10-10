@@ -48,6 +48,8 @@ public class TestApplication {
 		customArrayList.add("From29");
 		customArrayList.add("From30");
 		customArrayList.get(4);
+		customArrayList.get(6);
+		customArrayList.getSize();
 
 
 

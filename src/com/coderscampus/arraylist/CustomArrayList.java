@@ -73,10 +73,12 @@ public class CustomArrayList<T> implements CustomList<T> {
 			
 
 	@Override
-	public int getSize(
-			
-			) {
+	public int getSize() {
 		
+		
+		if(newItems!=null) {
+		return newItems.length;
+		}
 		
 	
 		return 0;
