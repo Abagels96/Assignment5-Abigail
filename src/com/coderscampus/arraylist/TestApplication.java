@@ -47,8 +47,7 @@ public class TestApplication {
 		customArrayList.add("From28");
 		customArrayList.add("From29");
 		customArrayList.add("From30");
-
-
+		customArrayList.get(4);
 
 
 

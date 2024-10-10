@@ -12,24 +12,21 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
+
 	
 	
 	public int counter=1;
 
-
+	Object[] newItems= new Object[items.length*counter];
 
 	@Override
 	public boolean add(T item) {
 	
+		if(arrayIsFull()==true) {
+			counter++;
+		}
 		System.out.println(item);
-if(
-arrayIsFull()==true){
-	
-	counter++;
-	
-}
 			
-		Object[] newItems= new Object[items.length*counter];
 			System.out.println(Arrays.toString(items));
 			for(int i=0;i<items.length; i++)
 			if(newItems[i]==null) {
@@ -87,7 +84,12 @@ arrayIsFull()==true){
 
 	@Override
 	public T get(int index) {
-		// TODO Auto-generated method stub
+
+			if (newItems[index]!=null) {
+				System.out.println(newItems[index]);
+				
+		}
+		
 		return null;
 	}
 	
