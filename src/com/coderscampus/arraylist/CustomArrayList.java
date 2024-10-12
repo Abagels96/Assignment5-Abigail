@@ -12,38 +12,32 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
-
 	
 	
-	public int counter=1;
-
-	Object[] newItems= new Object[items.length*counter];
 
 	@Override
 	public boolean add(T item) {
-	
-		if(arrayIsFull()==true) {
-			counter++;
-		}
-		System.out.println(item);
 			
 			System.out.println(Arrays.toString(items));
-			for(int i=0;i<items.length; i++)
-			if(newItems[i]==null) {
-		items[i]=item;
-		newItems[i]=items[i];
+			for(int i=0;i<items.length; i++) {
+			if(items[i]==null) {
+				
+//	items[i]=item;
+	items[i]=item;
+				System.out.println(item);
 
-		
-	System.out.println(Arrays.toString(newItems));
+while(items[items.length-1]!=null) {
+				arrayIsFull(item);}
 	return true;
 			}
+				}
+				
 			
-			System.out.println(Arrays.toString(newItems));
+		
 			
-	
 	return false;
-	
-	
+			
+			
 	
 	}
 
@@ -53,20 +47,29 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 
 
-	public boolean arrayIsFull() {
-		for(Object element:items) {
-				if(element==null) {
-					System.out.println("the array is empty");
-				}
-				else {
-					System.out.println("The array is full");
-		           
-		          
-				}
-		}  return true;
-	}
-
+	public Object[]  arrayIsFull( T item
+			) {
+		int index=1;
+//	
+	Object[]newItems= new Object[items.length*index];
+		
+		for(int i=0; i<items.length;i++) {
+		while(items[i]!=null) {
+			
+			index= index*2;
+		newItems=Arrays.copyOf(items, items.length*index);
+		newItems[items.length+i]=item;
+		
+		
+		System.out.println(Arrays.toString(newItems));
+				
+		}}
+			
+		return newItems;
 	
+	}{
+}
+
 		
 			
 			
@@ -74,10 +77,11 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public int getSize() {
+		//put different method in case Object are added to the list 
 		
-		
-		if(newItems!=null) {
-		return newItems.length;
+		if(items!=null) {
+			System.out.println(items.length);
+		return items.length;
 		}
 		
 	
@@ -87,8 +91,8 @@ public class CustomArrayList<T> implements CustomList<T> {
 	@Override
 	public T get(int index) {
 
-			if (newItems[index]!=null) {
-				System.out.println(newItems[index]);
+			if (items[index]!=null) {
+				System.out.println(items[index]);
 				
 		}
 		
