@@ -1,3 +1,4 @@
+
 package com.coderscampus.arraylist;
 
 import java.util.Arrays;
@@ -12,26 +13,29 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
+	int size=0;
 	
 	
 
 	@Override
 	public boolean add(T item) {
-			
 			System.out.println(Arrays.toString(items));
-			for(int i=0;i<items.length; i++) {
-			if(items[i]==null) {
+			if(size==items.length) {
+				System.out.println("Array is full");
+				arrayIsFull(items);}
+			//if array is full then 
+			
+			else	if(items[size]==null) {
 				
 //	items[i]=item;
-	items[i]=item;
+	items[size]=item;// adding each item
+	size++;
 				System.out.println(item);
 
-while(items[items.length-1]!=null) {
-				arrayIsFull(item);}
-	return true;
+				return true;
 			}
-				}
 				
+			System.out.println(size);
 			
 		
 			
@@ -47,25 +51,18 @@ while(items[items.length-1]!=null) {
 
 
 
-	public Object[]  arrayIsFull( T item
+	public Object[]  arrayIsFull( Object [] items
 			) {
-		int index=1;
-//	
-	Object[]newItems= new Object[items.length*index];
+
 		
-		for(int i=0; i<items.length;i++) {
-		while(items[i]!=null) {
 			
-			index= index*2;
-		newItems=Arrays.copyOf(items, items.length*index);
-		newItems[items.length+i]=item;
+		items=Arrays.copyOf(items, items.length*2);
 		
 		
-		System.out.println(Arrays.toString(newItems));
 				
-		}}
+		System.out.println(Arrays.toString(items));
 			
-		return newItems;
+		return items;
 	
 	}{
 }
