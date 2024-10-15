@@ -16,26 +16,33 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public boolean add(T item) {
-		
+		for(int i=0; i<items.length;i++)		
+	items[size] = item;// adding each item
+	
+		for(int i=0; i<items.length*2;i++) {
+			
+			
+			items[size] = item;// adding each item
+		}
+		System.out.println(item);
+		size++;
+		System.out.println(size);
 		System.out.println(Arrays.toString(items));
-		
 		
 		if (size == items.length) {
 			System.out.println("Array is full");
 			arrayIsFull(items);
-		}
-		// if array is full then
-
-		else if (items[size] == null) {
-
-			items[size] = item;// adding each item
-			System.out.println(item);
-
 			return true;
 		}
-		size++;
+	
+		
+		// if array is full then double the items
 
-		System.out.println(size);
+	
+
+
+		
+
 
 
 		return false;
@@ -48,8 +55,8 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 		System.out.println(Arrays.toString(items));
 
-		return items;
 
+		return items;
 	}
 
 	{
