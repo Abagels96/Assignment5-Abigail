@@ -12,27 +12,33 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
+	Object[]newItems= arrayIsFull(items);
 	int size = 0;
 
 	@Override
 	public boolean add(T item) {
 			
+		
+		
 			if (size == items.length) {
 				System.out.println("Array is full");
-				arrayIsFull(items, item);
+				arrayIsFull(items);
 				
 			}
-			for(Object item1: items) {
-			items[size] = item;// adding each item
-	
-			System.out.println(item);
-			size++;
-			System.out.println(size);
-			System.out.println(Arrays.toString(items));
-			return true;
-		
-			}
 			
+			
+			System.out.println(Arrays.toString(newItems));
+			for(int i=0; i<newItems.length;i++) {
+				items=newItems;
+				newItems[size] = item;// adding each item
+//				items[size]=item;
+				
+				System.out.println(item);
+				size++;
+				System.out.println(size);
+				System.out.println(Arrays.toString(newItems));
+				return true;
+			}
 		
 		// if array is full then double the items
 
@@ -47,10 +53,9 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	}
 
-	public Object[] arrayIsFull(Object[] items,T item) {
+	public Object[] arrayIsFull(Object[] items) {
 
 		items = Arrays.copyOf(items, items.length * 2);
-		items[items.length-1]=item;
 
 		System.out.println(Arrays.toString(items));
 
@@ -66,8 +71,8 @@ public class CustomArrayList<T> implements CustomList<T> {
 		// put different method in case Object are added to the list
 
 		if (items != null) {
-			System.out.println(items.length);
-			return items.length;
+			System.out.println(newItems.length);
+			return newItems.length;
 		}
 
 		return 0;
