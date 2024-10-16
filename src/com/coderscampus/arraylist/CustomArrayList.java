@@ -12,31 +12,29 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
-	Object[]newItems= arrayIsFull(items);
+	// 
 	int size = 0;
 
 	@Override
 	public boolean add(T item) {
 			
-		
+		//
 		
 			if (size == items.length) {
 				System.out.println("Array is full");
-				arrayIsFull(items);
+				items=arrayIsFull(items);
 				
+				System.out.println(Arrays.toString(items));
 			}
 			
 			
-			System.out.println(Arrays.toString(newItems));
-			for(int i=0; i<newItems.length;i++) {
-				items=newItems;
-				newItems[size] = item;// adding each item
-//				items[size]=item;
+			for(int i=0; i<items.length;i++) {
+				items[size]=item;
 				
 				System.out.println(item);
 				size++;
 				System.out.println(size);
-				System.out.println(Arrays.toString(newItems));
+				System.out.println(Arrays.toString(items));
 				return true;
 			}
 		
@@ -69,10 +67,10 @@ public class CustomArrayList<T> implements CustomList<T> {
 	@Override
 	public int getSize() {
 		// put different method in case Object are added to the list
-
+//
 		if (items != null) {
-			System.out.println(newItems.length);
-			return newItems.length;
+			System.out.println(items.length);
+			return items.length;
 		}
 
 		return 0;
@@ -80,7 +78,8 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public T get(int index) {
-
+// if index is at least zero and less than the length of the array
+		// link to newItems or items pick one or the other
 		if (items[index] != null) {
 			System.out.println(items[index]);
 
