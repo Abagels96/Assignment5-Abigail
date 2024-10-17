@@ -64,27 +64,40 @@ public class CustomArrayList<T> implements CustomList<T> {
 	{
 	}
 
+//	I reviewed your get and getSize methods. The get method should return the item at the specified index, not null, and it should check if the index is within the bounds of the array.
+//			The getSize method should return the number of items in the list, not the length of the underlying array. It should return size, not items.length.
 	@Override
 	public int getSize() {
-		// put different method in case Object are added to the list
-//
-		if (items != null) {
-			System.out.println(items.length);
-			return items.length;
-		}
+int counter=0;
+
+for(Object item:items) {
+
+		if (item != null&& counter!=items.length) {
+			
+			 counter++;
+		} 
+		
+		System.out.println(counter);
+		
+		return counter;
+}
 
 		return 0;
 	}
 
 	@Override
 	public T get(int index) {
+		
+		
+		int i=index;
+		if(index>=0 && index<items.length){
 // if index is at least zero and less than the length of the array
 		// link to newItems or items pick one or the other
 		if (items[index] != null) {
 			System.out.println(items[index]);
-
-		}
-
+             return (T) items[i];
+		}}
+		
 		return null;
 	}
 
