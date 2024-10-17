@@ -71,16 +71,20 @@ public class CustomArrayList<T> implements CustomList<T> {
 int counter=0;
 
 for(Object item:items) {
-
-		if (item != null&& counter!=items.length) {
+//counter updates when there is an item in that spot and when counter is less than items.length else it is supposed to print out the counter in the console and then return it
+		if (item != null) {
 			
 			 counter++;
 		} 
+		else   {		
 		
-		System.out.println(counter);
-		
-		return counter;
+			 System.out.println(counter);
+			 return counter;
 }
+		
+		
+}
+System.out.println(counter);
 
 		return 0;
 	}

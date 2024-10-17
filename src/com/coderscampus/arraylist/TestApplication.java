@@ -16,11 +16,11 @@ public class TestApplication {
 		customArrayList.add("Think");
 		customArrayList.add("You're");
 		customArrayList.add("Calling");
-//		customArrayList.add("From");
-//		customArrayList.add("A");
-//		customArrayList.add("From2");
-//		customArrayList.add("From3");
-//		customArrayList.add("From4");
+		customArrayList.add("From");
+		customArrayList.add("A");
+		customArrayList.add("From2");
+		customArrayList.add("From3");
+		customArrayList.add("From4");
 //		customArrayList.add("From5");
 //		customArrayList.add("From6");
 //		customArrayList.add("From7");
