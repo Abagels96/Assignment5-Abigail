@@ -22,15 +22,15 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 		if (size == items.length) {
 			System.out.println("Array is full");
-			items[items.length-1]= item;
 			items = isArrayFull(items);
-
+           items[size]=item;
+           size++;
 		}
 		else {
 			items[size] = item;
 
-			System.out.println(Arrays.toString(items));
 			size++;
+			System.out.println(Arrays.toString(items));
 			return true;}
 		
 
@@ -46,15 +46,21 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public int getSize() {
-
 		
 		for (Object item : items) {
 			
-			if(item!=null||size>0) {
-				size+=1;
-
+			if(item!=null||
+					size>0) {
 				return size;
+				
+
 			}
+			else if(item==null)
+			{
+				System.out.println("biscuits");
+				break;
+			}
+			
 		}
 		
 

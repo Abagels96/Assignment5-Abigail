@@ -8,13 +8,15 @@ public class TestApplication {
 
 		
 		
-		for(int i=0; i<10;i++) {
+		for(int i=0; i<20;i++) {
 			customArrayList.add("item " + i );
 			
 		}
+		System.out.println(customArrayList.add(null));
+		System.out.println(customArrayList.add("Peanuts"));
 		System.out.println(customArrayList.get(4));
 		System.out.println(customArrayList.get(6));
-System.out.println(customArrayList.get(11));
+System.out.println(customArrayList.get(10));
 		System.out.println(customArrayList.getSize());
 		System.out.println(customArrayList.get(0));
 
